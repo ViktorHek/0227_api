@@ -1,5 +1,15 @@
-require 'rails_helper'
-
 RSpec.describe Product, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'is expected to have db colums' do
+    it { is_expected.to have_db_column :title }
+  end
+  
+  describe 'is expected to have validation' do
+    it { is_expected.to validate_presence_of :title }
+  end
+
+  describe 'Factory' do
+    it 'is expected to be valid' do
+      expect(create(:product)).to be_valid
+    end
+  end
 end
