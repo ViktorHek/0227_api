@@ -7,7 +7,8 @@ RSpec.describe 'POST/api/products' do
       post '/api/products',
         params: {
           product: {
-            title: 'custum skor',
+            title: 'MyTitle',
+            description: 'SomeText',
             user_id: user.id,
           }
         },
@@ -29,7 +30,8 @@ RSpec.describe 'POST/api/products' do
         params: {
           product: {
             title: '',
-            user_id: user.id,
+            description: 'SomeText',
+            user_id: user.id
           }
         },
         headers: user_headers
@@ -49,8 +51,9 @@ RSpec.describe 'POST/api/products' do
       post '/api/products',
         params: {
           product: {
-            title: 'custum skor',
-            user_id: 'fuck-face',
+            title: 'MyTitle',
+            description: 'SomeText',
+            user_id: 'fel',
           }
         }
     end
