@@ -1,6 +1,7 @@
 RSpec.describe Product, type: :model do
   describe 'is expected to have db colums' do
     it { is_expected.to have_db_column :title }
+    it { is_expected.to have_db_column :description }
   end
   
   describe 'is expected to have validation' do
